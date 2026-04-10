@@ -1,0 +1,107 @@
+:root {
+    --v-text-muted: #666666;
+    --v-bg: #fafafa;
+    --v-surface: #ffffff;
+    --v-border: #eaeaea;
+    --v-text-main: #000000;
+    --v-radius: 8px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--v-bg);
+    color: var(--v-text-main);
+    -webkit-font-smoothing: antialiased;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.page-title {
+    letter-spacing: -0.05em;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+.page-subtitle {
+    color: var(--v-text-muted);
+    font-size: 0.95rem;
+}
+
+.v-card {
+    background-color: var(--v-surface);
+    border: 1px solid var(--v-border);
+    border-radius: var(--v-radius);
+    padding: 1.5rem;
+    transition: border-color 0.15s ease;
+}
+.v-card:hover {
+    border-color: #ccc;
+}
+
+.metric-title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--v-text-muted);
+    margin-bottom: 0.5rem;
+}
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.v-table-container {
+    background-color: var(--v-surface);
+    border: 1px solid var(--v-border);
+    border-radius: var(--v-radius);
+    overflow: hidden;
+}
+.table {
+    margin-bottom: 0;
+    --bs-table-bg: transparent;
+}
+.table th {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--v-text-muted);
+    border-bottom: 1px solid var(--v-border);
+    padding: 1rem 1.25rem;
+    background-color: var(--v-surface);
+}
+.table td {
+    border-bottom: 1px solid var(--v-border);
+    padding: 1rem 1.25rem;
+    vertical-align: middle;
+    font-size: 0.9rem;
+    color: var(--v-text-main);
+}
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.v-badge {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+}
+.v-badge-success {
+    background-color: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+}
+.v-badge-danger {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+.v-badge-neutral {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+}
