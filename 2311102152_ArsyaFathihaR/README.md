@@ -214,7 +214,7 @@ Dengan demikian, program dapat menampilkan hasil pengolahan data secara otomatis
 
 ## 📸 Output
 
-Tambahkan screenshot hasil program di sini:
+Screenshot hasil program:
 
 <img width="1920" height="1080" alt="penilaianMahasiswa" src="https://github.com/user-attachments/assets/0226e217-c2b9-451b-9eb4-e7a5096f052c" />
 
