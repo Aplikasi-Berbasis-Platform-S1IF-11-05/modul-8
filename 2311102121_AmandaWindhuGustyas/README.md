@@ -214,10 +214,6 @@ Output:
 </p>
 
 # Penjelasan
-Oke ini aku jelasin versi **ringkas tapi jelas (buat laporan/README juga aman)** 👇
-
----
-
 Pada program tersebut, PHP dan CSS digunakan secara bersamaan untuk membangun tampilan dan logika sistem penilaian mahasiswa. PHP berperan sebagai bahasa pemrograman sisi server yang digunakan untuk mengolah data mahasiswa, seperti menghitung nilai akhir, menentukan grade, serta status kelulusan. Data mahasiswa disimpan dalam bentuk array, kemudian diproses menggunakan function seperti perhitungan nilai dan kondisi if/else untuk menentukan hasilnya. Setelah itu, PHP juga digunakan untuk menampilkan data ke dalam bentuk tabel HTML secara dinamis menggunakan perulangan.
 
 Sedangkan CSS digunakan untuk mengatur tampilan agar lebih menarik dan tidak terlihat seperti halaman HTML biasa. CSS memberikan desain seperti warna background gradasi pink, tabel yang rapi, efek bayangan (shadow), serta pengaturan warna pada status kelulusan seperti hijau untuk “Lulus” dan merah untuk “Tidak Lulus”. Selain itu, CSS juga mengatur posisi teks agar berada di tengah dan memberikan efek visual yang lebih modern.
