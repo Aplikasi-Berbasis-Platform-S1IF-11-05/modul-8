@@ -1,3 +1,53 @@
+<?php
+$mahasiswa = [
+    ["nama" => "Zahra", "nim" => "231110201", "tugas" => 85, "uts" => 90, "uas" => 88],
+    ["nama" => "Tsuroyya", "nim" => "231110202", "tugas" => 80, "uts" => 75, "uas" => 90],
+    ["nama" => "Poetri", "nim" => "231110203", "tugas" => 50, "uts" => 55, "uas" => 58]
+];
+
+function hitungNilaiAkhir($tugas, $uts, $uas) {
+    return ($tugas * 0.3) + ($uts * 0.3) + ($uas * 0.4);
+}
+
+function tentukanGrade($nilai) {
+    if ($nilai >= 85) return "A";
+    elseif ($nilai >= 75) return "B";
+    elseif ($nilai >= 65) return "C";
+    elseif ($nilai >= 50) return "D";
+    else return "E";
+}
+
+$totalNilai = 0;
+$nilaiTertinggi = 0;
+$rows = "";
+
+foreach ($mahasiswa as $m) {
+
+    $nilaiAkhir = hitungNilaiAkhir($m["tugas"], $m["uts"], $m["uas"]);
+    $grade = tentukanGrade($nilaiAkhir);
+    $status = ($nilaiAkhir >= 60) ? "Lulus" : "Tidak Lulus";
+    $class  = ($nilaiAkhir >= 60) ? "lulus" : "tidak";
+
+    $totalNilai += $nilaiAkhir;
+
+    if ($nilaiAkhir > $nilaiTertinggi) {
+        $nilaiTertinggi = $nilaiAkhir;
+    }
+
+    $rows .= "
+        <tr>
+            <td>{$m['nama']}</td>
+            <td>{$m['nim']}</td>
+            <td>" . number_format($nilaiAkhir, 2) . "</td>
+            <td>$grade</td>
+            <td class='$class'>$status</td>
+        </tr>
+    ";
+}
+
+$rataRata = $totalNilai / count($mahasiswa);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,11 +92,6 @@
             text-align: center;
         }
 
-        .card h3 {
-            margin: 0;
-            font-size: 15px;
-        }
-
         .card p {
             font-size: 24px;
             font-weight: 600;
@@ -57,8 +102,7 @@
             border-collapse: collapse;
         }
 
-        th,
-        td {
+        th, td {
             padding: 16px;
             text-align: center;
         }
@@ -85,84 +129,34 @@
 
 <body>
 
-    <div class="container">
-        <h2>Sistem Penilaian Mahasiswa</h2>
+<div class="container">
+    <h2>Sistem Penilaian Mahasiswa</h2>
 
-        <?php
-            $mahasiswa = [
-                ["nama" => "Zahra", "nim" => "231110201", "tugas" => 85, "uts" => 90, "uas" => 88],
-                ["nama" => "Tsuroyya", "nim" => "231110202", "tugas" => 80, "uts" => 75, "uas" => 90],
-                ["nama" => "Poetri", "nim" => "231110203", "tugas" => 50, "uts" => 55, "uas" => 58]
-            ];
-
-            function hitungNilaiAkhir($tugas, $uts, $uas) {
-                return ($tugas * 0.3) + ($uts * 0.3) + ($uas * 0.4);
-            }
-
-            function tentukanGrade($nilai) {
-                if ($nilai >= 85) return "A";
-                elseif ($nilai >= 75) return "B";
-                elseif ($nilai >= 65) return "C";
-                elseif ($nilai >= 50) return "D";
-                else return "E";
-            }
-
-            $totalNilai = 0;
-            $nilaiTertinggi = 0;
-            $rows = "";
-
-            foreach ($mahasiswa as $m) {
-
-                $nilaiAkhir = hitungNilaiAkhir($m["tugas"], $m["uts"], $m["uas"]);
-                $grade = tentukanGrade($nilaiAkhir);
-                $status = ($nilaiAkhir >= 60) ? "Lulus" : "Tidak Lulus";
-                $class  = ($nilaiAkhir >= 60) ? "lulus" : "tidak";
-
-                $totalNilai += $nilaiAkhir;
-
-                if ($nilaiAkhir > $nilaiTertinggi) {
-                    $nilaiTertinggi = $nilaiAkhir;
-                }
-
-                $rows .= "
-                    <tr>
-                        <td>{$m['nama']}</td>
-                        <td>{$m['nim']}</td>
-                        <td>" . number_format($nilaiAkhir, 2) . "</td>
-                        <td>$grade</td>
-                        <td class='$class'>$status</td>
-                    </tr>
-                ";
-            }
-
-            $rataRata = $totalNilai / count($mahasiswa);
-        ?>
-
-        <div class="cards">
-            <div class="card">
-                <h3>Rata-rata Nilai</h3>
-                <p><?= number_format($rataRata, 2) ?></p>
-            </div>
-
-            <div class="card">
-                <h3>Nilai Tertinggi</h3>
-                <p><?= number_format($nilaiTertinggi, 2) ?></p>
-            </div>
+    <div class="cards">
+        <div class="card">
+            <h3>Rata-rata Nilai</h3>
+            <p><?= number_format($rataRata, 2) ?></p>
         </div>
 
-        <table>
-            <tr>
-                <th>Nama</th>
-                <th>NIM</th>
-                <th>Nilai Akhir</th>
-                <th>Grade</th>
-                <th>Status</th>
-            </tr>
-
-            <?= $rows ?>
-
-        </table>
+        <div class="card">
+            <h3>Nilai Tertinggi</h3>
+            <p><?= number_format($nilaiTertinggi, 2) ?></p>
+        </div>
     </div>
+
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Nilai Akhir</th>
+            <th>Grade</th>
+            <th>Status</th>
+        </tr>
+
+        <?= $rows ?>
+
+    </table>
+</div>
 
 </body>
 </html>
