@@ -216,10 +216,8 @@ Dengan demikian, program dapat menampilkan hasil pengolahan data secara otomatis
 
 Tambahkan screenshot hasil program di sini:
 
-```
-<img width="1920" height="1080" alt="penilaianMahasiswa" src="https://github.com/user-attachments/assets/17480bf7-8ab4-49dd-b57f-bdbc579e0e3d" />
+<img width="1920" height="1080" alt="penilaianMahasiswa" src="https://github.com/user-attachments/assets/0226e217-c2b9-451b-9eb4-e7a5096f052c" />
 
 
-```
 
 
