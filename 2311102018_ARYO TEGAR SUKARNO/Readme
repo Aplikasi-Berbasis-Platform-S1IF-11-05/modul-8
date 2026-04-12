@@ -1,0 +1,209 @@
+<div align="center">
+    <br />
+    <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
+    <br />
+    <h3>MODUL 9 <br> PHP </h3>
+    <br />
+    <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
+    <br />
+    <br />
+    <br />
+    <h3>Disusun Oleh :</h3>
+    <p>
+        <strong>ARYO TEGAR SUKARNO</strong>
+        <br>
+        <strong>2311102018</strong>
+        <br>
+        <strong>S1 IF-11-REG05</strong>
+    </p>
+    <br />
+    <h3>Dosen Pengampu :</h3>
+    <p>
+        <strong>Dedi Agung Prabowo, S.Kom., M.Kom</strong>
+    </p>
+    <br />
+    <br />
+    <h4>Asisten Praktikum :</h4>
+    <strong>Apri Pandu Wicaksono </strong>
+    <br>
+    <strong>Hamka Zaenul Ardi</strong>
+    <br />
+    <h3>LABORATORIUM HIGH PERFORMANCE <br>FAKULTAS INFORMATIKA <br>UNIVERSITAS TELKOM PURWOKERTO <br>2026 </h3>
+</div>
+<hr>
+
+## Dasar Teori
+
+PHP (Hypertext Preprocessor) adalah bahasa pemrograman server-side yang digunakan untuk membuat website dinamis. Kode PHP dijalankan di server dan hasilnya dikirim ke browser dalam bentuk HTML. PHP memungkinkan pengolahan data, penggunaan database, serta pembuatan sistem web interaktif. Dalam penggunaannya, PHP memanfaatkan konsep dasar seperti variabel, array, fungsi, percabangan, dan perulangan untuk membangun aplikasi berbasis web.
+
+## Tugas Modul 9 - PHP: Buat Sistem Penilaian Mahasiswa
+
+### Source Code
+
+$mahasiswa = [
+[
+"nama" => "Aryadi Kusuma",
+"nim" => "2023001",
+"nilai_tugas" => 85,
+"nilai_uts" => 78,
+"nilai_uas" => 80
+],
+[
+"nama" => "Budi Santoso",
+"nim" => "2023002",
+"nilai_tugas" => 90,
+"nilai_uts" => 85,
+"nilai_uas" => 88
+],
+[
+"nama" => "Citra Dewi",
+"nim" => "2023003",
+"nilai_tugas" => 75,
+"nilai_uts" => 70,
+"nilai_uas" => 68
+],
+[
+"nama" => "Doni Pratama",
+"nim" => "2023004",
+"nilai_tugas" => 65,
+"nilai_uts" => 55,
+"nilai_uas" => 60
+],
+[
+"nama" => "Eka Putra",
+"nim" => "2023005",
+"nilai_tugas" => 95,
+"nilai_uts" => 92,
+"nilai_uas" => 94
+]
+];
+
+function hitungNilaiAkhir($tugas, $uts, $uas) {
+    // Rumus: (tugas * 0.2) + (uts * 0.35) + (uas * 0.45)
+    // Menggunakan operator aritmatika
+    $nilai_akhir = ($tugas _ 0.2) + ($uts _ 0.35) + ($uas * 0.45);
+    return round($nilai_akhir, 2);
+}
+
+function tentukanGrade($nilai) {
+    // Menggunakan if/else untuk menentukan grade
+    if ($nilai >= 85) {
+$grade = "A";
+    } elseif ($nilai >= 70) {
+$grade = "B";
+    } elseif ($nilai >= 60) {
+$grade = "C";
+    } elseif ($nilai >= 45) {
+$grade = "D";
+} else {
+$grade = "E";
+}
+return $grade;
+}
+
+function tentukanStatus($nilai) {
+    // Menggunakan operator perbandingan untuk menentukan lulus/tidak
+    if ($nilai >= 60) {
+return "LULUS";
+} else {
+return "TIDAK LULUS";
+}
+}
+
+$data_hasil = [];
+$total_nilai = 0;
+$nilai_tertinggi = 0;
+
+// Loop untuk mengolah setiap mahasiswa
+foreach ($mahasiswa as $siswa) {
+$nilai_akhir = hitungNilaiAkhir(
+$siswa["nilai_tugas"],
+$siswa["nilai_uts"],
+$siswa["nilai_uas"]
+);
+
+    $grade = tentukanGrade($nilai_akhir);
+    $status = tentukanStatus($nilai_akhir);
+
+    // Simpan hasil
+    $data_hasil[] = [
+        "nama" => $siswa["nama"],
+        "nim" => $siswa["nim"],
+        "nilai_tugas" => $siswa["nilai_tugas"],
+        "nilai_uts" => $siswa["nilai_uts"],
+        "nilai_uas" => $siswa["nilai_uas"],
+        "nilai_akhir" => $nilai_akhir,
+        "grade" => $grade,
+        "status" => $status
+    ];
+
+    // Hitung total untuk rata-rata
+    $total_nilai += $nilai_akhir;
+
+    // Tentukan nilai tertinggi
+    if ($nilai_akhir > $nilai_tertinggi) {
+        $nilai_tertinggi = $nilai_akhir;
+    }
+
+}
+
+// Hitung rata-rata kelas
+$rata_rata_kelas = round($total_nilai / count($data_hasil), 2);
+
+// Hitung jumlah yang lulus
+$jumlah_lulus = 0;
+foreach ($data_hasil as $hasil) {
+    if ($hasil["status"] == "LULUS") {
+$jumlah_lulus++;
+}
+}
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Penilaian Mahasiswa - Modul 9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+KODE LENGKAP = index.php
+
+### Penjelasan
+
+Program Sistem Penilaian Mahasiswa dibuat menggunakan PHP untuk mengolah data nilai mahasiswa secara otomatis. Data mahasiswa disimpan dalam array asosiatif yang berisi nama, NIM, nilai tugas, UTS, dan UAS. Program memiliki beberapa fungsi utama yaitu menghitung nilai akhir berdasarkan bobot nilai, menentukan grade menggunakan percabangan if–else, serta menentukan status kelulusan mahasiswa.
+
+Pengolahan data dilakukan menggunakan perulangan foreach untuk menghitung nilai setiap mahasiswa, mencari rata-rata kelas, nilai tertinggi, dan jumlah mahasiswa yang lulus. Hasil pengolahan kemudian ditampilkan dalam halaman web menggunakan HTML dan CSS, sedangkan PHP berfungsi memproses data di sisi server.
+.
+
+## DOKUMENTASI
+
+![alt text](sss-1.jpeg)
