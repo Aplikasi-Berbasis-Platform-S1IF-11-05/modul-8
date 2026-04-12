@@ -45,7 +45,8 @@ Dalam penggunaannya, PHP memerlukan web server (seperti Apache) untuk memproses 
 
 ### Source Code 
 
-```<!DOCTYPE html>
+```
+<!DOCTYPE html>
 <html>
 <head>
     <title>Modul 9 - PHP</title>
