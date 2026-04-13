@@ -160,5 +160,5 @@ Output:
 <img width="1901" height="961" alt="image" src="gambar.png" />
 
 # Penjelasan
-Program ini adalah halaman web bertema Ramadan yang dibuat menggunakan HTML, CSS, dan Bootstrap untuk tampilan responsif dan modern, di mana pengguna dapat melihat informasi seperti jadwal puasa, doa, dan amalan melalui tab navigasi, serta memiliki fitur interaktif berupa tombol “Surprise” yang ketika diklik akan menampilkan modal pop-up berdesain menarik berwarna biru yang mensimulasikan pemberian THR (Tunjangan Hari Raya) dengan nominal acak yang dianimasikan secara bertahap menggunakan JavaScript, sehingga memberikan pengalaman visual yang dinamis dan terasa seperti benar-benar mendapatkan hadiah.
+Program PHP tersebut merupakan aplikasi sederhana untuk menampilkan dan mengolah data nilai mahasiswa secara otomatis. Data mahasiswa disimpan dalam bentuk array asosiatif yang memuat informasi nama, NIM, serta nilai tugas, UTS, dan UAS. Program menghitung nilai akhir berdasarkan bobot tertentu menggunakan fungsi khusus, kemudian menentukan grade dan status kelulusan berdasarkan nilai akhir tersebut. Hasil perhitungan ditampilkan dalam bentuk tabel yang memuat nilai akhir, grade, dan keterangan lulus atau tidak lulus, serta dilengkapi informasi rata-rata nilai kelas dan nilai tertinggi untuk memberikan gambaran performa keseluruhan mahasiswa.
 
