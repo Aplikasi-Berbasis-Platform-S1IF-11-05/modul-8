@@ -156,7 +156,7 @@ $rataRata = $totalNilai / count($mahasiswa);
 **Kode Lengkap:** [index.php](index.php)
 
 Output:
-<img src="Screenshot 2026-04-14 183755" alt="preview" style="width:100%; max-width:900px;">
+<img src="Screenshot 2026-04-14 183755.png" alt="preview" style="width:100%; max-width:900px;">
 
 ### Penjelasan
 
