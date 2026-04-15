@@ -1,7 +1,7 @@
 <?php
 // ============================================================
 // SISTEM PENILAIAN MAHASISWA
-// File: index.php
+// Faqih Abdullah 2311102048
 // ============================================================
 
 // ---- 1. DATA MAHASISWA (Array Asosiatif) ----
