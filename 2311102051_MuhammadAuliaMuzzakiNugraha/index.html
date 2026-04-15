@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Penilaian Mahasiswa</title>
+  </head>
+  <link rel="stylesheet" href="style.css" /> 
+  <body>
+    <main>
+      <h1>Sistem Penilaian Mahasiswa</h1>
+      <p class="subtitle"></p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>NIM</th>
+              <th>Nilai Tugas</th>
+              <th>Nilai UTS</th>
+              <th>Nilai UAS</th>
+              <th>Nilai Akhir</th>
+              <th>Grade</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <tr>
+              <td colspan="9">Memuat data...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <section class="summary">
+        <div class="summary-card">
+          <h2>Rata-rata Kelas</h2>
+          <p id="rata-rata">-</p>
+        </div>
+        <div class="summary-card">
+          <h2>Nilai Tertinggi</h2>
+          <p id="nilai-tertinggi">-</p>
+          <small id="pemilik-tertinggi">-</small>
+        </div>
+      </section>
+
+      <p class="error" id="error-message" hidden></p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

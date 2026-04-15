@@ -1,0 +1,34 @@
+# Dependencies
+/vendor/
+/composer.lock
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# PHP
+*.log
+phpunit.xml
+.phpunit.result.cache
+composer.phar
+
+# Build / Cache
+/cache/
+/temp/
+/storage/framework/cache/**
+/storage/framework/sessions/**
+/storage/framework/views/**
+/storage/logs/**
