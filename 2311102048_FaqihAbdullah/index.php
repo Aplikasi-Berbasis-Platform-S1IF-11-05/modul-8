@@ -4,7 +4,7 @@
 // Faqih Abdullah 2311102048
 // ============================================================
 
-// ---- 1. DATA MAHASISWA (Array Asosiatif) ----
+// ---- 1. DATA MAHASISWA ----
 $mahasiswa = [
     [
         "nama"        => "Andi Prasetyo",

@@ -57,10 +57,10 @@ Pada praktikum ini, PHP digunakan untuk membangun sistem penilaian mahasiswa sed
 <?php
 // ============================================================
 // SISTEM PENILAIAN MAHASISWA
-// File: index.php
+// Faqih Abdullah
 // ============================================================
 
-// ---- 1. DATA MAHASISWA (Array Asosiatif) ----
+// ---- 1. DATA MAHASISWA ----
 $mahasiswa = [
     [
         "nama"        => "Andi Prasetyo",
